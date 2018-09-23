@@ -1,0 +1,53 @@
+{
+    "manifest_version": 2,
+    "name": "LuoOJ Optimizer",
+    "description": "Go! LuoOJ",
+    "version": "1.0",
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "clipboardRead",
+        "http://luo.hustoj.com/"
+    ],
+    "background": {
+        "persistent": true,
+        "scripts": [
+            "script/blocker.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://luo.hustoj.com/*"
+            ],
+            "css": [
+                "css/hide.css"
+            ],
+            "run-at": "document_end",
+            "js": [
+                "lib/jquery.min.js",
+                "script/tabs.js"
+            ]
+        },
+        {
+            "matches": [
+                "http://luo.hustoj.com/submitpage.php*"
+            ],
+            "css": [
+                "css/lg-ide.css"
+            ],
+            "run-at": "document_end",
+            "js": [
+                "lib/jquery.min.js",
+                "script/editor.js"
+            ]
+        }
+    ],
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "web_accessible_resources": [
+        "lib/*",
+        "inject/*"
+    ]
+}

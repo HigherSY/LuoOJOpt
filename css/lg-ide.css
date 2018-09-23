@@ -1,0 +1,10 @@
+#lg-ide-body {
+    height: 500px;
+    width: 100%;
+}
+
+.lg-ide-pre {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
