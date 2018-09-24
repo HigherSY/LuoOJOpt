@@ -1,6 +1,5 @@
+'use strict';
 (function () {
-    'use strict';
-
     //$('marquee').remove();
 
     var sStor = window.sessionStorage;
