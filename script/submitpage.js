@@ -1,9 +1,9 @@
 'use strict';
 (function () {
     var sStor = window.sessionStorage;
-    var vcodeInput = $('input[name=vcode][type=text]');
+    var vcodeInput = document.getElementById("vcode");
 
-    vcodeInput.val(sStor.getItem('vcode'));
+    vcodeInput.value = sStor.getItem('vcode');
     document.getElementById("language").selectedIndex = 1;
 
     document.getElementById("frmSolution").onsubmit = null;
