@@ -6,11 +6,15 @@
     vcodeInput.val(sStor.getItem('vcode'));
     document.getElementById("language").selectedIndex = 1;
 
-    document.getElementById("source").style.display = "none";
     document.getElementById("frmSolution").onsubmit = null;
     document.getElementById("language").onchange = null;
 
-    $('#source').after('<div id="lg-ide-body"><pre name="code" id="code" class="lg-ide-pre"></pre></div>');
+    var source = document.getElementById("source");
+    source.style.display = "none";
+    var ide = document.createElement('div');
+    ide.id = "lg-ide-body";
+    ide.innerHTML = '<pre name="code" id="code" class="lg-ide-pre"></pre>';
+    source.parentElement.insertBefore(ide,source);
 
 
     function injectAce() {

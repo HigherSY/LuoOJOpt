@@ -3,15 +3,15 @@
     //$('marquee').remove();
 
     var sStor = window.sessionStorage;
-    var vcodeImg = $('img[src="vcode.php"]');
+    var vcodeImg = document.querySelector('img[src="vcode.php"]');
 
     if (window.location.pathname == "/loginpage.php") {
-        vcodeImg.attr('src', 'vcode.php?go');
+        vcodeImg.src = 'vcode.php?go';
         sStor.setItem('vcode', "");
         return;
     }
 
-    if (vcodeImg.length > 0) {
-        vcodeImg.attr('src', 'favicon.ico');
+    if (vcodeImg !== null) {
+        vcodeImg.src = 'favicon.ico';
     }
 })()
