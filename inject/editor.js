@@ -14,24 +14,10 @@
         document.getElementById("frmSolution").submit();
     }
 
-    function replaceOld() {
-        // eAL.toggle_off("source");
-        // $('script[src="edit_area/edit_area_full.js"]').remove();
-        // document.getElementById("edit_area_toggle_checkbox_source").remove();
-        // document.getElementById("frame_source").remove();
-
-        document.getElementById("source").style.display = "none";
-
-        document.getElementById("frmSolution").onsubmit = null;
-        document.getElementById("Submit").onclick = doSubmit;
-        document.getElementById("language").onchange = null;
-
-        $('#source').after('<div id="lg-ide-body"><pre name="code" id="code" class="lg-ide-pre"></pre></div>');
-    }
+    document.getElementById("Submit").onclick = doSubmit;
 
     if (typeof (ace) == "undefined") return;
 
-    replaceOld();
     editor = ace.edit("code");
     // ace.config.set('basePath', chrome.extension.getURL("lib/ace/src-min-noconflict/"))
     editor.setTheme("ace/theme/clouds");

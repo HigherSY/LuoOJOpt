@@ -2,9 +2,16 @@
 (function () {
     var sStor = window.sessionStorage;
     var vcodeInput = $('input[name=vcode][type=text]');
-    vcodeInput.val(sStor.getItem('vcode'));
 
+    vcodeInput.val(sStor.getItem('vcode'));
     document.getElementById("language").selectedIndex = 1;
+
+    document.getElementById("source").style.display = "none";
+    document.getElementById("frmSolution").onsubmit = null;
+    document.getElementById("language").onchange = null;
+
+    $('#source').after('<div id="lg-ide-body"><pre name="code" id="code" class="lg-ide-pre"></pre></div>');
+
 
     function injectAce() {
         if (this.readyState !== undefined && this.readyState !== 'complete') return;

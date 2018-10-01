@@ -39,7 +39,7 @@
             "run-at": "document_end",
             "js": [
                 "lib/jquery.min.js",
-                "script/editor.js"
+                "script/submitpage.js"
             ]
         }
     ],
