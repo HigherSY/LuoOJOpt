@@ -7,8 +7,7 @@
     function doSubmit() {
         sStor.setItem('vcode', vcodeInput.val());
 
-        document.getElementById("source").value = editor.getValue();
-        document.getElementById("lg-ide-body").remove();
+        document.getElementById("hide_source").value = editor.getValue();
         
         document.getElementById("frmSolution").target = "_self";
         document.getElementById("frmSolution").submit();
@@ -18,10 +17,16 @@
 
     if (typeof (ace) == "undefined") return;
 
-    editor = ace.edit("code");
-    // ace.config.set('basePath', chrome.extension.getURL("lib/ace/src-min-noconflict/"))
+    ace.require("ace/ext/language_tools");
+    editor = ace.edit("editor");
     editor.setTheme("ace/theme/clouds");
     editor.setFontSize(18);
+    editor.setOptions({
+	    enableBasicAutocompletion: true,
+	    enableSnippets: true,
+	    enableLiveAutocompletion: true
+    });
     editor.session.setMode("ace/mode/c_cpp");
-    editor.setValue(document.getElementById("source").value);
+    editor.setValue(document.getElementById("hide_source").value);
+    window.editor = editor;
 })()

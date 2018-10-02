@@ -10,12 +10,12 @@
     document.getElementById("language").onchange = null;
 
     var source = document.getElementById("source");
+    source.id = "hide_source";
     source.style.display = "none";
-    var ide = document.createElement('div');
-    ide.id = "lg-ide-body";
-    ide.innerHTML = '<pre name="code" id="code" class="lg-ide-pre"></pre>';
-    source.parentElement.insertBefore(ide,source);
 
+    var aceSource = document.createElement('pre');
+    aceSource.id = "editor";
+    source.parentElement.insertBefore(aceSource,source);
 
     function injectAce() {
         if (this.readyState !== undefined && this.readyState !== 'complete') return;
@@ -26,8 +26,18 @@
         injectScript.src = chrome.extension.getURL("inject/editor.js");
     }
 
+    function injectLangTools() {
+        if (this.readyState !== undefined && this.readyState !== 'complete') return;
+        
+        var aceLangTools = document.createElement("script");
+        aceLangTools.onload = injectAce;
+        document.head.appendChild(aceLangTools);
+    
+        aceLangTools.src = "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ext-language_tools.js";
+    }
+
     var aceScript = document.createElement("script");
-    aceScript.onload = injectAce;
+    aceScript.onload = injectLangTools;
     document.head.appendChild(aceScript);
 
     aceScript.src = "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js";

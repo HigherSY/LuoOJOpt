@@ -33,7 +33,7 @@
                 "http://luo.hustoj.com/submitpage.php*"
             ],
             "css": [
-                "css/lg-ide.css"
+                "css/editor.css"
             ],
             "run-at": "document_end",
             "js": [
