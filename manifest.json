@@ -23,7 +23,6 @@
             "css": [
                 "css/hide.css"
             ],
-            "run-at": "document_end",
             "js": [
                 "script/tabs.js"
             ]
@@ -35,7 +34,6 @@
             "css": [
                 "css/editor.css"
             ],
-            "run-at": "document_end",
             "js": [
                 "script/submitpage.js"
             ]
