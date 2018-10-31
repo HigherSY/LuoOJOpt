@@ -25,7 +25,8 @@
             ],
             "js": [
                 "script/tabs.js"
-            ]
+            ],
+            "run_at": "document_end"
         },
         {
             "matches": [
@@ -36,7 +37,8 @@
             ],
             "js": [
                 "script/submitpage.js"
-            ]
+            ],
+            "run_at": "document_end"
         }
     ],
     "browser_action": {
