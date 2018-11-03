@@ -30,5 +30,5 @@
     aceScript.onload = injectAce;
     document.head.appendChild(aceScript);
 
-    aceScript.src = browser.runtime.getURL("lib/ace-builds/src-min-noconflict/ace.js");
+    aceScript.src = "https://cdn.staticfile.org/ace/1.4.1/ace.js";
 })()
