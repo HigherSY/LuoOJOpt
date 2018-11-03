@@ -23,22 +23,12 @@
         var injectScript = document.createElement("script");
         document.head.appendChild(injectScript);
 
-        injectScript.src = chrome.extension.getURL("inject/editor.js");
-    }
-
-    function injectLangTools() {
-        if (this.readyState !== undefined && this.readyState !== 'complete') return;
-        
-        var aceLangTools = document.createElement("script");
-        aceLangTools.onload = injectAce;
-        document.head.appendChild(aceLangTools);
-    
-        aceLangTools.src = "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ext-language_tools.js";
+        injectScript.src = browser.runtime.getURL("inject/editor.js");
     }
 
     var aceScript = document.createElement("script");
-    aceScript.onload = injectLangTools;
+    aceScript.onload = injectAce;
     document.head.appendChild(aceScript);
 
-    aceScript.src = "https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.1/ace.js";
+    aceScript.src = browser.runtime.getURL("lib/ace-builds/src-min-noconflict/ace.js");
 })()

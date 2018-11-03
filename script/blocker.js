@@ -4,14 +4,13 @@ function blockRequest(details) {
     };
 }
 
-function updateFilters(urls) {
-    if (chrome.webRequest.onBeforeRequest.hasListener(blockRequest)) {
+function updateFilters() {
+    if (browser.webRequest.onBeforeRequest.hasListener(blockRequest)) {
         return;
     }
-    chrome.webRequest.onBeforeRequest.addListener(blockRequest, {
+    browser.webRequest.onBeforeRequest.addListener(blockRequest, {
         urls: [
             "http://luo.hustoj.com/vcode.php",
-            "http://luo.hustoj.com/edit_area/edit_area_full.js",
             "http://luo.hustoj.com/include/checksource.js"
         ]
     }, ['blocking']);

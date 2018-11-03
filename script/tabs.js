@@ -1,7 +1,5 @@
 'use strict';
 (function () {
-    //$('marquee').remove();
-
     var sStor = window.sessionStorage;
     var vcodeImg = document.querySelector('img[src="vcode.php"]');
 

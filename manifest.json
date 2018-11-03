@@ -6,11 +6,9 @@
     "permissions": [
         "webRequest",
         "webRequestBlocking",
-        "clipboardRead",
         "http://luo.hustoj.com/"
     ],
     "background": {
-        "persistent": true,
         "scripts": [
             "script/blocker.js"
         ]
